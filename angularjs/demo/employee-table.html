@@ -1,0 +1,70 @@
+<div>
+    Rows limit:
+    <input
+      type="number"
+      step="1"
+      min="0"
+      max="{{employees.length}}"
+      ng-model="rowsLimit"
+    />
+  </div>
+  <br />
+  <div>
+    Sort By:
+    <select ng-model="sortColumn">
+      <option value="name">Name ASC</option>
+      <option value="dateOfBirth">Date of Birth ASC</option>
+      <option value="gender">Gender ASC</option>
+      <option value="-salary">Salary DESC</option>
+    </select>
+  </div>
+  <br />
+  <div>
+    <input
+      type="text"
+      placeholder="Search by name & city"
+      ng-model="searchText"
+    />
+  </div>
+  <br />
+  <div><input type="checkbox" ng-model="hideSalary" /> Hide Salary</div>
+  <br />
+  <table>
+    <thead>
+      <tr>
+        <th ng-click="sortData('name')">
+          Name
+          <div ng-class="getSortClass('name')"></div>
+        </th>
+        <th ng-click="sortData('dateOfBirth')">
+          Date of Birth
+          <div ng-class="getSortClass('dateOfBirth')"></div>
+        </th>
+        <th ng-click="sortData('city')">
+          City
+          <div ng-class="getSortClass('city')"></div>
+        </th>
+        <th ng-click="sortData('gender')">
+          Gender
+          <div ng-class="getSortClass('gender')"></div>
+        </th>
+        <th ng-click="sortData('salary')" ng-hide="hideSalary">
+          Salary
+          <div ng-class="getSortClass('salary')"></div>
+        </th>
+        <th ng-show="hideSalary">Salary</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        ng-repeat="employee in employees | limitTo:rowsLimit | orderBy:sortColumn:reverseSort | filter:search"
+      >
+        <td>{{employee.name | uppercase}}</td>
+        <td>{{employee.dateOfBirth | date:"dd/MM/yyyy"}}</td>
+        <td>{{employee.city}}</td>
+        <td>{{employee.gender | gender | uppercase}}</td>
+        <td ng-hide="hideSalary">{{employee.salary |currency:"BGN ":1}}</td>
+        <td ng-show="hideSalary">################</td>
+      </tr>
+    </tbody>
+  </table>

@@ -1,30 +1,23 @@
 <!DOCTYPE html>
-<html ng-app lang="en">
-<head>
-    <script src="./scripts/angular.min.js"></script>
-    <title>Document</title>
-</head>
-<body>
-    <div > 
-        7 * 8 = {{7 * 8}}
-    </div>
+<html ng-app="myModule" lang="en">
+  <head>
+    <script src="./scripts/angular.js"></script>
+    <script src="./scripts/script.js"></script>
+    <script src="./scripts/filters.js"></script>
+    <link rel="stylesheet" href="./styles/style.css" />
+    <title>AngularJs</title>
+  </head>
+  <body ng-controller="myController">
     <div>
-        7 * 8 = {{7 * 8}}
+      Select View:
+      <select ng-model="modelView">
+        <option ng-repeat="modelView in modelViews" value="{{modelView.value}}">
+          {{modelView.name}}
+        </option>
+      </select>
     </div>
-    <div>
-        Is 1 == 2: {{1 == 2}}
-    </div>
+    <br />
 
-    <div>
-        Is 1 == 1: {{1 == 1}}
-    </div>
-
-    <div>
-        {{ {name: "Vasko", age: 28 }.name }}
-    </div>
-
-    <div>
-        {{ ["Sarah", "Vasko", "Pesho"][0] }}
-    </div>
-</body>
+    <div ng-include="modelView"></div>
+  </body>
 </html>

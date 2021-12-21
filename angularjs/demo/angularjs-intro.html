@@ -1,0 +1,56 @@
+<div>
+    <p>Name: {{country.name}}</p>
+    <p>Capital: {{country.capital}}</p>
+    <img ng-src="{{country.flag}}" alt="{{country.name}}n Flag" />
+  </div>
+  <br>
+  <div>
+    <input type="text" ng-model="message" />
+  </div>
+  <br>
+  <div>
+    <input type="text" ng-model="greetings" />
+  </div>
+  <br>
+  <div>{{message}}</div>
+  <br>
+  <div>{{greetings}}</div>
+  <br>
+  <table>
+    <tr>
+      <th>Key</th>
+      <th>Input</th>
+    </tr>
+    <tr>
+      <td>First Name</td>
+      <td>
+        <input type="text" ng-model="employee.firstName" />
+      </td>
+    </tr>
+    <tr>
+      <td>Last Name</td>
+      <td>
+        <input type="text" ng-model=" employee.lastName" />
+      </td>
+    </tr>
+    <tr>
+      <td>Gender</td>
+      <td>
+        <input type="text" ng-model="employee.gender" />
+      </td>
+    </tr>
+  </table>
+  <div>
+    <p>FirstName: {{ employee.firstName }}</p>
+    <p>LastName: {{ employee.lastName }}</p>
+    <p>Gender: {{ employee.gender }}</p>
+  </div>
+  <div>7 * 8 = {{7 * 8}}</div>
+  <div>7 * 8 = {{7 * 8}}</div>
+  <div>Is 1 == 2: {{1 == 2}}</div>
+
+  <div>Is 1 == 1: {{1 == 1}}</div>
+
+  <div>{{ {name: "Vasko", age: 28 }.name }}</div>
+
+  <div>{{ ["Sarah", "Vasko", "Pesho"][0] }}</div>

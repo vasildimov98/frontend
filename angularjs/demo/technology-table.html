@@ -1,0 +1,29 @@
+<table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Likes</th>
+        <th>Disslikes</th>
+        <th>Buttons</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="technology in technologies">
+        <td>{{technology.name}}</td>
+        <td>{{technology.like}}</td>
+        <td>{{technology.disslike}}</td>
+        <td>
+          <input
+            type="button"
+            value="Like"
+            ng-click="increamentLikes(technology)"
+          />
+          <input
+            type="button"
+            value="Disslike"
+            ng-click="increamentDisslikes(technology)"
+          />
+        </td>
+      </tr>
+    </tbody>
+  </table>
