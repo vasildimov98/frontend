@@ -1,0 +1,19 @@
+table {
+    border-collapse: collapse;
+}
+
+table tr td {
+    border: 1px black solid;
+}
+
+td {
+    padding: 5px;
+}
+
+td input[type="button"] {
+    width: 100%;
+}
+
+input {
+    word-wrap: normal;
+}
