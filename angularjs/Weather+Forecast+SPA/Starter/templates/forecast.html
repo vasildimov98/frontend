@@ -1,0 +1,14 @@
+<h1>Forcast for {{cityName}}</h1>
+
+<hr>
+    Most Search Cities: <a href="#forecast/sofia" ng-class="{'bg-primary': cityName==='Sofia'}">Sofia</a> | <a href="#forecast/plovdiv" ng-class="{'bg-primary': cityName==='Plovdiv'}">Plovdiv</a> | <a href="#forecast/burgas" ng-class="{'bg-primary': cityName==='Burgas'}">Burgas</a>
+<hr>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">{{convertDate(weatherResult.dt) | date: "dd MMMM yyyy"}}</h3>
+    </div>
+    <div class="panel-body">
+        Daytime temperature: {{convertToCelsiusFromKelvin(weatherResult.main.temp)}}
+    </div>
+</div>
