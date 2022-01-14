@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="Demo">
+<head>
+    <title>Controller As Syntax</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.2/angular.min.js"></script>
+    <script src="./scripts/script.js"></script>
+</head>
+<body>
+    <div ng-controller="countryController as countryCtrl">
+        {{countryCtrl.name}}
+        <div ng-controller="stateController as stateCtrl">
+            {{countryCtrl.name}} {{stateCtrl.name}}
+            <div ng-controller="cityController as cityCtrl">
+                {{countryCtrl.name}} {{stateCtrl.name}} {{cityCtrl.name}}
+            </div>
+        </div>
+    </div>
+</body>
+</html>
